@@ -1,0 +1,145 @@
+root
+{
+    display: block;
+}
+body
+{
+    background-image: url('Imagenes/metall.jpg');
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: cover;
+    font-family: "Poor Richard";
+    font-size: 20pt;
+    color:white;
+    
+    
+}
+tabla
+{
+    margin: auto;
+      
+}
+
+#tabla
+{
+    opacity: 0.75;
+    width: 60%;
+    margin: auto;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: grey;
+    background-repeat: repeat-y;
+     
+}
+
+
+h1
+{
+    text-align: center; 
+    font-size:24px;
+}
+
+h2
+{
+    font-size: 22px; 
+    
+}
+h3
+{
+    font-size: 20px;
+    text-align: justify;
+    
+}
+h4
+{
+    font-size: 16px;
+    text-align: center;
+}
+
+#tablaIn
+{
+
+    width: 60%;
+    margin: auto;
+    border-radius: 25px;
+    border-collapse: collapse;
+    background-color: #d70700;
+    background-repeat: repeat-y;
+    font-size: 18px;
+    aling: center;
+        
+}
+
+#forma
+{
+    
+    width: 170px;
+    height: 170px;
+    border-radius: 25px;
+    background-color: #d70700;
+    font-size: 18px; 
+    text-align: center;
+    align: top;
+}
+
+.boton{
+        font-size:14px;
+        font-family:Poor Richard;
+        font-weight:bold;
+        color:black;
+        background:white;
+        border:25px;
+        border-bottom-left-radius:25px;
+        border-bottom-right-radius: 25px;
+        width:80px;
+        height:19px;
+}
+
+.textbox
+{
+    border: 1px solid black;
+    border-radius: 4px;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    background-color: white;
+    color: black;
+    
+}
+movible
+{
+     margin: auto;
+      
+}
+#movible
+{
+    align: top;
+    background-color: #d70700;
+    height:300px;
+    width: 200px;
+    border-radius: 25px;  
+    
+}
+#id
+{  
+    margin-left: 220px;
+    margin-right: 280px;
+    text-align: left;
+}
+#formularios
+{
+    margin: auto;
+    text-align: center;
+    border: 1px solid #0B173B;
+    background-color: #0B173B;
+    border-radius: 25px;
+}
+
+#form2
+{
+    margin: auto;
+    text-align: left;
+    border: 1px solid #BDBDBD;
+    //background-color: #BDBDBD;
+    border-radius: 25px;
+}

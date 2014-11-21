@@ -1,0 +1,167 @@
+ vgf<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+    
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/validarUsuario.jsp"
+                path="/validarUsuario" 
+                type="cr.ac.una.sistemacontrolgiras.action.validarUsuarioAction">
+                <forward name="administrativo" path="/InicioUsuarioAdministrativo.jsp"/>
+                <forward name="solicitante" path="/InicioUsuarioSolicitante.jsp"/>
+                <forward name="AsistenteAdministrativo" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+                <forward name="error" path="/Inicio.jsp"/>
+        </action>
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/registrarVehiculo.jsp"
+                path="/registrarVehiculo" 
+                type="cr.ac.una.sistemacontrolgiras.action.registrarVehiculoAction">
+                <forward name="exito" path="/InicioUsuarioAdministradorSeundario.jsp"/>
+        </action>
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/modificarVehiculo.jsp"
+                path="/mostrarModificarAutomovil" 
+                type="cr.ac.una.sistemacontrolgiras.action.mostrarModificarAutomovil">
+        </action>
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/validarGira.jsp"
+                path="/validarGira" 
+                type="cr.ac.una.sistemacontrolgiras.action.validarGiraAction">
+                <forward name="exitogira" path="/redireccionar.jsp"/>
+               
+        </action>
+       
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/modificarVehiculo.jsp"
+                path="/modificarVehiculo" 
+                type="cr.ac.una.sistemacontrolgiras.action.modificarVehiculoAction">
+               <forward name="exito" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+        </action>
+        
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/eliminarVehiculo.jsp"
+                path="/eliminarVehiculo" 
+                type="cr.ac.una.sistemacontrolgiras.action.eliminarVehiculoAction">
+            <forward name="exito" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+        </action>
+        
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/modificarUsuario.jsp"
+                path="/modificarUsuario" 
+                type="cr.ac.una.sistemacontrolgiras.action.modificarUsuarioAction">
+            <forward name="exito" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+        </action>
+        
+        
+        <action parameter="metodo"
+                validate="false"
+                scope="request" 
+                input="/mostrarVehiculos.jsp"
+                path="/mostrarVehiculos" 
+                type="cr.ac.una.sistemacontrolgiras.action.mostrarVehiculosAction">
+            <forward name="exito" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+        </action>
+        
+        <action 
+            path="/RegistrarUsuario" 
+            type="cr.ac.una.sistemacontrolgiras.action.RegistrarUsuarioAction"
+            validate="false"
+            scope="request" 
+            parameter="metodo"
+            input="/RegistrarUsuario.jsp">
+            <forward name="exito" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+        </action>
+
+        <action path="/RegistrarGira" 
+                type="cr.ac.una.sistemacontrolgiras.action.RegistrarGiraAction"
+                validate="false"
+                scope="request" 
+                parameter="metodo"
+                input="/RegistrarGira.jsp">
+               <forward name="Solicitud" path="/InicioUsuarioAdministrativoSeundario.jsp"/>
+        </action>
+        
+        
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="cr/ac/una/sistemacontrolgiras/etiquetas"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>
